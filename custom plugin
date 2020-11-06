@@ -1,0 +1,65 @@
+//sani: how to create:
+
+(function($) 
+{
+	//sani: create plugin
+	$.fn.PLIGINNAME = function(options) 
+	{   //sani: set options
+		var defaults = {
+							color: "#075570",
+							background: "#556b2f"
+						};
+		var settings = $.extend({}, defaults, options);
+		
+		this.css({ color: settings.color,
+		           background: settings.background 
+		         });
+		
+		//sani: constructor
+		this.initialize = function() 
+		{
+			console.log("Sani: init....");
+			return this;
+		};
+		//sani: private variables
+		var privatevar1 = '';
+		//private method
+		var myPrivateMethod = function() 
+		{
+			console.log("Sani: private method called");
+		}
+		
+		//sani:public method
+		this.myPublicMethod = function() 
+		{
+			console.log("Sani: public  methodc alled");
+		};
+		
+	return this.initialize();	
+	}
+})(jQuery);
+
+
+//sani: how to use it
+
+
+
+<html>
+	<head>
+		<title>PITB</title>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<script src="jquery.min.js"></script>
+		<script src="pitb.js"></script>
+	</head>
+	<body>
+	<p>Testing</p>
+		<script>
+		$( "p" ).PLIGINNAME({color: "#ff0000",
+		               background: "#000000"
+		               }
+		             );
+		</script>
+	</body>
+</html>
+
